@@ -1,0 +1,47 @@
+name: dev_portfolio
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  animated_text_kit: ^4.2.1
+  auto_animated: ^3.0.1
+  carousel_slider: ^4.0.0-nullsafety.0
+  cupertino_icons: ^1.0.2
+  draggable_scrollbar: ^0.1.0
+  fancy_shimmer_image: ^2.0.0+1
+  flutter:
+    sdk: flutter
+  flutter_form_builder: ^7.1.1
+  flutter_svg: ^1.0.3
+  font_awesome_flutter: ^9.0.0
+  get: 4.6.1
+  get_storage: ^2.0.3
+  glassmorphism_ui: ^0.2.0
+  google_fonts: ^2.1.0
+  scroll_to_index: ^3.0.1
+  url_launcher: ^6.0.6
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+  lints: 1.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Agustina
+      fonts:
+        - asset: assets/fonts/agustina.otf
+
+    - family: Helvetica Now Display
+      fonts:
+        - asset: assets/fonts/HelveticaNowDisplay-Regular.ttf
+        - asset: assets/fonts/HelveticaNowDisplay-Medium.ttf
+        - asset: assets/fonts/HelveticaNowDisplay-ExtraBold.ttf
