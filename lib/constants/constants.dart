@@ -2,13 +2,22 @@ import 'package:dev_portfolio/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-const kDefaultPadding = 20.0;
+const double kDefaultPadding = 20.0;
+
+const String emailRegExp =
+    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
 
 // final double kHeight = MediaQuery.of(context).size.height;
 
 final Duration hoverAnimationDuration = Duration(milliseconds: 200);
 
+final Duration toggleButtonAnimationDuration = Duration(milliseconds: 200);
+
 final Duration magnetMouseAnimationDuration = Duration(milliseconds: 400);
+
+final Duration drawerAnimationDuration = Duration(milliseconds: 500);
+
+final Duration scrollAnimationDuration = Duration(seconds: 1);
 
 final Duration snackbarDuration = Duration(seconds: 5);
 
@@ -16,9 +25,15 @@ final Duration carouselAnimDuration = Duration(milliseconds: 600);
 
 const Curve slidingAnimationCurve = Curves.fastLinearToSlowEaseIn;
 
+const Curve drawerAnimationCurve = Curves.easeInExpo;
+
 const Curve cardAnimationCurve = Curves.easeOutCubic;
 
+const Curve toggleButtonAnimationCurve = Curves.easeInOutBack;
+
 const Curve buttonAnimationCurve = Curves.fastLinearToSlowEaseIn;
+
+const Curve scrollAnimationCurve = Curves.easeInOut;
 
 final kDefaultShadow = BoxShadow(
   offset: Offset(0, 10),

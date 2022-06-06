@@ -33,15 +33,10 @@ class TextFieldController extends GetxController {
     }
   }
 
-  //   sendData() => FirebaseFirestore.instance.collection('booking').add({
-  //         'name': '$name',
-  //         'email': '$email',
-  //         'people_count': '$peepsCount',
-  //         'date': '$date',
-  //         'rooms': '$rooms',
-  //         'preferences': '$options',
-  //         'policyChoice': '$termsSwitch',
-  //         'reservation_name': '$reservationName',
-  //       });
+  //  uploadDatatoFirestore() => FirebaseFirestore.instance.collection('contact').add({
+  //    'name': '$name',
+  //    'email': '$email',
+  //    'messae': '$message',
+  //  });
 
 }

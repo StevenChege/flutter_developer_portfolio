@@ -59,7 +59,7 @@ class HireMeCard extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Helvetica Now Display',
                     fontWeight: FontWeight.w800,
-                    fontSize: ResponsiveWidget.isLargeScreen(context) ? 45 : 40,
+                    fontSize: ResponsiveWidget.isSmallScreen(context) ? 35 : 45,
                     letterSpacing: -.7,
                     color: kPitchDark,
                   ),
@@ -79,11 +79,15 @@ class HireMeCard extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: ResponsiveWidget.isSmallScreen(context) ? 40 : 50,
-            child: NiceButton(
-              imageSrc: iconHandPic,
-              text: 'Hire Me!',
-              press: () {},
+            height: ResponsiveWidget.isSmallScreen(context) ? 45 : 55,
+            child: Padding(
+              padding: EdgeInsets.only(top: 0),
+              child: NiceButton(
+                width: ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
+                imageSrc: iconHandPic,
+                text: 'Hire Me!',
+                press: () {},
+              ),
             ),
           ),
         ],

@@ -1,13 +1,18 @@
 import 'package:dev_portfolio/widgets/clipper_page.dart';
+import 'package:dev_portfolio/widgets/small_social_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
 import '../constants/text_styles.dart';
+import '../controllers/scrolling_controller.dart';
 
 class BottomSection extends StatelessWidget {
   const BottomSection({Key? key}) : super(key: key);
+
+  static var scrollcontroller = Get.find<ScrollingController>();
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +57,16 @@ class BottomSection extends StatelessWidget {
                 ],
               ),
             ),
+            Positioned(
+              bottom: kDefaultPadding * 2,
+              right: kDefaultPadding * 2,
+              child: SmallSocialCard(
+                iconSrc: toTopIconImage,
+                color: Color.fromARGB(255, 218, 252, 250),
+                size: 25,
+                press: () => Obx(scrollcontroller.goToTop()),
+              ),
+            )
           ],
         ),
       ),

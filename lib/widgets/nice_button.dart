@@ -8,15 +8,20 @@ class NiceButton extends StatelessWidget {
     Key? key,
     required this.imageSrc,
     required this.text,
+    required this.width,
     required this.press,
   }) : super(key: key);
 
   final String imageSrc, text;
+  final double width;
   final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
+    Size _ = MediaQuery.of(context).size;
+
+    return Container(
+      constraints: BoxConstraints(maxWidth: width),
       child: TextButton(
         onPressed: press,
         style: ButtonStyle(
@@ -43,12 +48,10 @@ class NiceButton extends StatelessWidget {
           children: [
             Image.asset(
               imageSrc,
-              height: ResponsiveWidget.isSmallScreen(context) ? 35 : 38,
+              height: ResponsiveWidget.isSmallScreen(context) ? 33 : 35,
             ),
             SizedBox(
-              width: ResponsiveWidget.isSmallScreen(context)
-                  ? kDefaultPadding * .5
-                  : kDefaultPadding,
+              width: kDefaultPadding * .5,
             ),
             Text(text, style: buttonTextStyle),
           ],

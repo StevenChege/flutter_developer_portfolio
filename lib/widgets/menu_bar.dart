@@ -1,6 +1,8 @@
-import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:get/get.dart';
+
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/text_styles.dart';
@@ -16,12 +18,15 @@ class MenuBar extends StatefulWidget {
 class _MenuBarState extends State<MenuBar> {
   int selectedIndex = 0;
   int hoverIndex = 0;
+
+  static var scrollcontroller = Get.find<ScrollingController>();
+
   List<String> menuItems = [
     'Home',
     'About',
     'Services',
-    //'Portfolio',
-    //'Testimonial',
+    'Portfolio',
+    'Testimonial',
     'Contact',
   ];
 
@@ -31,39 +36,35 @@ class _MenuBarState extends State<MenuBar> {
 
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: ResponsiveWidget.isSmallScreen(context)
-              ? kDefaultPadding
+          horizontal: !ResponsiveWidget.isLargeScreen(context)
+              ? kDefaultPadding * 1.5
               : kDefaultPadding * 2.5),
       decoration: BoxDecoration(
-          color: kWhite,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10),
-            topRight: Radius.circular(10),
-          ),
-          boxShadow: [kDefaultShadow]),
-      constraints: BoxConstraints(maxWidth: _.width * .7),
+        color: kWhite,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+        boxShadow: [kDefaultShadow],
+      ),
+      constraints: BoxConstraints(maxWidth: _.width * .85),
       height: 75,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           menuItems.length,
-          (index) => buildMenuItem(
-            index,
-            GetX<ScrollingController>(
-              builder: (_) => _.scroll(context, index),
-            ),
-          ),
+          (i) => buildMenuItem(i),
         ),
       ),
     );
   }
 
-  Widget buildMenuItem(int i, dynamic press) => InkWell(
+  Widget buildMenuItem(int i) => InkWell(
         onTap: () {
           setState(() {
             selectedIndex = i;
           });
-          press;
+          Obx(scrollcontroller.scrollTo(context, i));
         },
         onHover: (v) {
           setState(() {
@@ -71,8 +72,7 @@ class _MenuBarState extends State<MenuBar> {
           });
         },
         child: Container(
-          constraints: BoxConstraints(
-              minWidth: ResponsiveWidget.isSmallScreen(context) ? 75 : 122),
+          constraints: BoxConstraints(minWidth: 75),
           height: 100,
           child: Stack(
             alignment: Alignment.center,

@@ -11,7 +11,7 @@ class FeedBackSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _ = MediaQuery.of(context).size;
+    Size _ = MediaQuery.of(context).size;
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),

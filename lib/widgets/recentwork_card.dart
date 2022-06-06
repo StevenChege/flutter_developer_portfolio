@@ -22,9 +22,13 @@ class RecentWorkCard extends StatefulWidget {
 
 class _RecentWorkCardState extends State<RecentWorkCard> {
   bool isHover = false;
+  double cardWidth = 550.0;
+  double cardHight = 300.0;
 
   @override
   Widget build(BuildContext context) {
+    Size _ = MediaQuery.of(context).size;
+
     return InkWell(
       onTap: widget.press,
       onHover: (v) {
@@ -34,8 +38,8 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
       },
       child: AnimatedContainer(
         duration: hoverAnimationDuration,
-        height: 300,
-        width: 540,
+        height: cardHight,
+        width: cardWidth,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           color: kWhite,
@@ -48,12 +52,15 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
             Image.asset(
               recentWorks[widget.index].image,
               fit: BoxFit.cover,
-              width: 250,
+              height: cardHight,
+              width: ResponsiveWidget.isLargeScreen(context)
+                  ? cardWidth * .5
+                  : cardWidth * .4,
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: kDefaultPadding,
+                  horizontal: kDefaultPadding * .6,
                   vertical: kDefaultPadding,
                 ),
                 child: Column(
@@ -69,13 +76,15 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                         fontFamily: 'Helvetica Now Display',
                         fontWeight: FontWeight.w400,
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 27 : 32,
+                            ResponsiveWidget.isSmallScreen(context) ? 25 : 33,
                         letterSpacing: -.3,
                         color: kTextGrayColor,
                       ),
                     ),
                     SizedBox(height: kDefaultPadding),
-                    Text('View Details', style: recentworkcardText3TextStyle),
+                    Text('View Details',
+                        style:
+                            recentworkcardText3TextStyle), //TODO: recent work details navigation
                   ],
                 ),
               ),

@@ -33,7 +33,4 @@ class ThemeController extends GetxController {
       Get.isDarkMode ? 'Changed to Light-Mode' : 'Changed to Dark-Mode',
     );
   }
-
- 
-
 }

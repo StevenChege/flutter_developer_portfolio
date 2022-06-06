@@ -14,7 +14,7 @@ class ContactBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 900,
+      height: 969,
       padding: EdgeInsets.all(kDefaultPadding * 3),
       margin: EdgeInsets.only(top: kDefaultPadding * 2),
       constraints: BoxConstraints(maxWidth: 1000),
@@ -29,22 +29,22 @@ class ContactBox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SocialCard(
-                iconSrc: iconPicSkype,
-                name: 'Steve Chege',
-                color: Color(0xFFD9FFFC),
-                press: () {},
-              ),
-              SocialCard(
                 iconSrc: iconPicWhatsApp,
                 name: 'Steve Chege',
-                color: Color(0xFFE4FFC7),
-                press: () {},
+                color: Color(0xFFD9FFFC),
+                press: () {}, //TODO: socials link twitter
               ),
               SocialCard(
-                iconSrc: iconPicMessanger,
+                iconSrc: iconPicTwitter,
+                name: 'Steve Chege',
+                color: Color(0xFFE4FFC7),
+                press: () {}, //TODO: socials link
+              ),
+              SocialCard(
+                iconSrc: iconPicGithub,
                 name: 'Steve Chege',
                 color: Color(0xFFE8F0F9),
-                press: () {},
+                press: () {}, //TODO: socials link github
               ),
             ],
           ),

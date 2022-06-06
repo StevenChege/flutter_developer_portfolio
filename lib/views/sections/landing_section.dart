@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../widgets/menu_bar.dart';
-import '../../widgets/person_pic.dart';
-import '../../constants/constants.dart';
+
 import '../../../../widgets/glass_content.dart';
 import '../../../../widgets/logo.dart';
+import '../../constants/constants.dart';
+import '../../widgets/menu_bar.dart';
+import '../../widgets/person_pic.dart';
 import '../../widgets/responsive_widget.dart';
 
 class LandingSect extends StatelessWidget {
@@ -16,14 +17,19 @@ class LandingSect extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.only(top: kDefaultPadding * 1.5),
-      width: _.width * .8,
+      width: _.width * .9,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              LoGo(),
+              Padding(
+                  padding: EdgeInsets.only(
+                      left: ResponsiveWidget.isSmallScreen(context)
+                          ? kDefaultPadding * 3
+                          : 1),
+                  child: LoGo()),
               Spacer(),
               GlassContent(),
               Spacer(flex: 3),
@@ -34,16 +40,16 @@ class LandingSect extends StatelessWidget {
               : Positioned(
                   bottom: 90,
                   right: -25,
-                  child: PersonPic(),
+                  child: PersonPic(
+                      height:
+                          ResponsiveWidget.isSmallScreen(context) ? 450 : 550),
                 ),
           Positioned(
             bottom: 49,
-            child: MenuBar(),
+            child: ResponsiveWidget.isSmallScreen(context)
+                ? SizedBox()
+                : MenuBar(),
           ),
-          // ResponsiveWidget.isSmallScreen(context) &&
-          //         ResponsiveWidget.isMediumScreen(context)
-          //     ? SizedBox()
-          //     : SizedBox(),
         ],
       ),
     );

@@ -18,24 +18,25 @@ class Feedback {
 }
 
 List<Feedback> feedBacks = [
+  //TODO: feedbacks
   Feedback(
     'Richard Mash',
-    k,
-    feedBacksPic1,
+    feedbackText,
+    feedBacksPic,
     1,
     Color(0xFFFFF3DD),
   ),
   Feedback(
-    'Richard Rich',
-    k,
-    feedBacksPic2,
+    'Jennifer Rich',
+    feedbackText,
+    feedBacksPic,
     2,
     Color(0xFFD9FFFC),
   ),
   Feedback(
-    'Richard Mash',
-    k,
-    feedBacksPic3,
+    'Andy Mwangi',
+    feedbackText,
+    feedBacksPic,
     3,
     Color(0xFFFFE0E0),
   ),

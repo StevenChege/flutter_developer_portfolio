@@ -20,7 +20,7 @@ class ContactSection extends StatelessWidget {
             decoration: BoxDecoration(
               color: kbackgroundColor,
               image: DecorationImage(
-                image: AssetImage(contactsectionBackroundImage),
+                image: AssetImage(contactsectionBackgroundImage),
                 fit: BoxFit.cover,
               ),
             )),

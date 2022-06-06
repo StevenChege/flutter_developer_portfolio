@@ -2,6 +2,7 @@ import 'package:dev_portfolio/constants/constants.dart';
 import 'package:dev_portfolio/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants/image_paths.dart';
 import '../../models/recentwork_model.dart';
 import '../../widgets/hireme_card.dart';
 import '../../widgets/recentwork_card.dart';
@@ -18,12 +19,12 @@ class RecentWorkSection extends StatelessWidget {
         color: Color(0xFFF7E8FF),
         image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/recent_work_bg.png')),
+            image: AssetImage(recentworksectionBackgroundImage)),
       ),
       child: Column(
         children: [
           Transform.translate(
-            offset: Offset(0, -80),
+            offset: Offset(0, -50),
             child: HireMeCard(),
           ),
           SectionTitle(

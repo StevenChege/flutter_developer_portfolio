@@ -72,7 +72,10 @@ class _FeedBackCardState extends State<FeedBackCard> {
                 style: feedbackCardTextStyle,
               ),
               SizedBox(height: kDefaultPadding * 2),
-              Text('Ronald Thompson', style: feedbackCardNameTextStyle),
+              Text(
+                feedBacks[widget.index].name,
+                style: feedbackCardNameTextStyle,
+              ),
             ],
           ),
         ),

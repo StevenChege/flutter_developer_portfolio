@@ -13,10 +13,10 @@ class Themes {
     backgroundColor: kWhite,
     scaffoldBackgroundColor: kWhite,
     textSelectionTheme: TextSelectionThemeData(cursorColor: kDarker),
-
     iconTheme: IconThemeData(color: kPink, opacity: .8),
     //? iconTheme: Theme.of(context).iconTheme   color: Theme.of(context).iconTheme.color
   );
+
   static final darkTheme = ThemeData(
     brightness: Brightness.dark,
     colorScheme: const ColorScheme.dark(),

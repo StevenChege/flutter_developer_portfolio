@@ -16,7 +16,7 @@ class GlassContent extends StatelessWidget {
 
     return GlassContainer(
       height: 375,
-      width: _.width * .7,
+      width: _.width * .85,
       shadowStrength: 1,
       opacity: .001,
       border: Border.all(
@@ -26,7 +26,9 @@ class GlassContent extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: kDefaultPadding * 2,
+          horizontal: ResponsiveWidget.isSmallScreen(context)
+              ? kDefaultPadding * 4
+              : kDefaultPadding * 2,
           vertical: kDefaultPadding,
         ),
         child: Column(
@@ -43,19 +45,24 @@ class GlassContent extends StatelessWidget {
                 color: kWhite,
               ),
             ),
+            SizedBox(
+                height: ResponsiveWidget.isSmallScreen(context)
+                    ? kDefaultPadding
+                    : 0),
             Text(
               'Steve \nChege',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w800,
                 fontSize: ResponsiveWidget.isSmallScreen(context) ? 59 : 66,
-                letterSpacing: -.6,
+                letterSpacing: 1,
+                // -.6,
                 color: kWhite,
               ),
             ),
             SizedBox(
                 height: ResponsiveWidget.isSmallScreen(context)
-                    ? kDefaultPadding
+                    ? kDefaultPadding * 1.5
                     : 0),
             Text(
               'Creative Design Director',

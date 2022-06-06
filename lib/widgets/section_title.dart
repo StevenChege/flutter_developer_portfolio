@@ -17,11 +17,11 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _ = MediaQuery.of(context).size;
+    Size _ = MediaQuery.of(context).size;
 
     return Container(
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
-      constraints: BoxConstraints(maxWidth: _.width),
+      constraints: BoxConstraints(maxWidth: _.width * .9),
       height: 100,
       child: Padding(
         padding: EdgeInsets.only(
@@ -30,7 +30,7 @@ class SectionTitle extends StatelessWidget {
               : kDefaultPadding * 2,
           left: ResponsiveWidget.isLargeScreen(context)
               ? kDefaultPadding * 5
-              : kDefaultPadding * 2,
+              : kDefaultPadding,
         ),
         child: Row(
           children: [
@@ -59,7 +59,7 @@ class SectionTitle extends StatelessWidget {
                       fontFamily: 'Helvetica Now Display',
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
-                      letterSpacing: 1.5,
+                      letterSpacing: 1,
                       color: kTextGrayColor,
                     )),
                 Text(title,
@@ -67,7 +67,7 @@ class SectionTitle extends StatelessWidget {
                       fontFamily: 'Helvetica Now Display',
                       fontWeight: FontWeight.w800,
                       fontSize:
-                          ResponsiveWidget.isLargeScreen(context) ? 50 : 40,
+                          ResponsiveWidget.isLargeScreen(context) ? 50 : 35,
                       letterSpacing: -.7,
                       color: kPitchDark,
                     )),

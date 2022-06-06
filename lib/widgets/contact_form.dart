@@ -36,9 +36,7 @@ class ContactForm extends GetView<TextFieldController> {
             labelText: 'Email Address',
             hintText: 'Enter your email address',
             validator: (v) {
-              if (v!.isEmpty ||
-                  !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                      .hasMatch(v)) {
+              if (v!.isEmpty || !RegExp(emailRegExp).hasMatch(v)) {
                 return '';
               }
               return null;
@@ -84,6 +82,7 @@ class ContactForm extends GetView<TextFieldController> {
           Center(
             child: FittedBox(
               child: NiceButton(
+                width: 225,
                 imageSrc: iconContactPic,
                 text: 'Contact Me!',
                 press: () {

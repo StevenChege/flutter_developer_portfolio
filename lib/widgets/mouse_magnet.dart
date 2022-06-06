@@ -1,4 +1,5 @@
 import 'package:dev_portfolio/constants/image_paths.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
@@ -45,32 +46,34 @@ class _MouseMagnetState extends State<MouseMagnet> {
   Widget build(BuildContext context) {
     final _ = MediaQuery.of(context).size;
 
-    return Stack(
-      children: [
-        MouseRegion(
-          onHover: (e) => setState(() {
-            dX = e.localPosition.dx;
-            dY = e.localPosition.dy;
-          }),
-          child: Container(
-            height: _.height,
-            width: _.width,
-            child: widget.body,
-          ),
-        ),
-        AnimatedPositioned(
-          top: dY,
-          left: dX - 15,
-          duration: magnetMouseAnimationDuration,
-          child: AnimatedContainer(
-            duration: magnetMouseAnimationDuration,
-            height: isOut ? 0 : 15,
-            width: isOut ? 0 : 15,
-            decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage(flutter))),
-          ),
-        ),
-      ],
-    );
+    return kIsWeb
+        ? Stack(
+            children: [
+              MouseRegion(
+                onHover: (e) => setState(() {
+                  dX = e.localPosition.dx;
+                  dY = e.localPosition.dy;
+                }),
+                child: Container(
+                  height: _.height,
+                  width: _.width,
+                  child: widget.body,
+                ),
+              ),
+              AnimatedPositioned(
+                top: dY,
+                left: dX - 20,
+                duration: magnetMouseAnimationDuration,
+                child: AnimatedContainer(
+                  duration: magnetMouseAnimationDuration,
+                  height: isOut ? 0 : 15,
+                  width: isOut ? 0 : 15,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage(flutter))),
+                ),
+              ),
+            ],
+          )
+        : widget.body;
   }
 }

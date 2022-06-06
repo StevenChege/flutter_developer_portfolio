@@ -1,4 +1,5 @@
 import 'package:dev_portfolio/constants/colors.dart';
+import 'package:dev_portfolio/constants/constants.dart';
 
 import 'package:flutter/material.dart';
 
@@ -8,11 +9,12 @@ final TextStyle aboutMyStoryTextStyle = TextStyle(
   fontSize: 72,
   letterSpacing: -.7,
   color: kPitchDark,
+  shadows: [kDefaultCardShadow],
 );
 
 final TextStyle aboutSectiontextTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
   fontSize: 16,
   letterSpacing: .2,
   color: kTextGrayColor,
@@ -21,7 +23,7 @@ final TextStyle aboutSectiontextTextStyle = TextStyle(
 final TextStyle buttonTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w300,
-  fontSize: 14,
+  fontSize: 11,
   letterSpacing: 1,
   color: kTextGrayColor,
 );
@@ -56,6 +58,14 @@ final TextStyle servicecardTextStyle = TextStyle(
   fontSize: 16,
   letterSpacing: .2,
   color: kTextGrayColor,
+);
+
+final TextStyle drawertextTextStyle = TextStyle(
+  fontFamily: 'Helvetica Now Display',
+  fontWeight: FontWeight.w300,
+  fontSize: 16,
+  letterSpacing: .2,
+  color: kDarker,
 );
 
 final TextStyle recentworkcardText1TextStyle = TextStyle(

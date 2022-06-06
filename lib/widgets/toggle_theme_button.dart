@@ -1,8 +1,6 @@
 import 'package:dev_portfolio/widgets/toggle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../constants/colors.dart';
-import '../../constants/image_paths.dart';
 import '../../controllers/theme_controller.dart';
 
 class ThemeToggleButton extends GetView<ThemeController> {
@@ -10,10 +8,7 @@ class ThemeToggleButton extends GetView<ThemeController> {
 
   @override
   Widget build(BuildContext context) {
-    return ToggleButton(
-      iconSrc: lightModeImage,
-      iconSrcb: darkModeImage,
-      color: kBlue,
+    return TogglerButton(
       press: () => controller.toggleTheme(),
     );
   }

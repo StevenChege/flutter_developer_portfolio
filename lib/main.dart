@@ -1,11 +1,12 @@
+import 'package:dev_portfolio/controllers/theme_controller.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'package:dev_portfolio/bindings/home_binding.dart';
 import 'package:dev_portfolio/routes/app_pages.dart';
-import 'package:dev_portfolio/themes.dart';
-import 'controllers/theme_controller.dart';
+
+import 'bindings/bindings.dart';
 
 void main() async {
   WidgetsFlutterBinding?.ensureInitialized();
@@ -14,13 +15,21 @@ void main() async {
     GetMaterialApp(
       title: "Flutter Dev Portfolio",
       debugShowCheckedModeBanner: false,
-      initialBinding: HomeBinding(),
+      initialBinding: Binding(),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       unknownRoute: AppPages.routes[1],
-      theme: Themes.lightTheme,
-      darkTheme: Themes.darkTheme,
       themeMode: Get.put<ThemeController>(ThemeController()).themeMode,
+      // theme: Themes.lightTheme,
+      // darkTheme: Themes.darkTheme,
+      // themeMode: ThemeMode.system,
+      theme: FlexThemeData.light(scheme: FlexScheme.hippieBlue),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.hippieBlue),
     ),
   );
 }
+
+ //TODO: theming 
+ //TODO: run android
+ //TODO: codemagic android
+ //TODO: git, screenshots

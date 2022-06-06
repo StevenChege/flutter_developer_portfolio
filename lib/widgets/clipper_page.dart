@@ -190,31 +190,3 @@ class _ClipShadowShadowPainter extends CustomPainter {
     return true;
   }
 }
-
-// class ClipperPage extends StatelessWidget {
-//   const ClipperPage({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     double width = MediaQuery.of(context).size.width;
-
-//     return SizedBox(
-//       height: 200,
-//       width: width,
-//       child: Stack(
-//         children: [
-//           ClipShadowPath(
-//             shadow: kDefaultShadow,
-//             clipper: BigClipper(),
-//             child: Container(color: Colors.orange),
-//           ),
-//           ClipShadowPath(
-//             shadow: kDefaultShadow,
-//             clipper: SmallClipper(),
-//             child: Container(color: Colors.red),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
