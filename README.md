@@ -30,7 +30,7 @@ Before these steps make sure to update flutter to `flutter 3.0`
 ```
 git clone https://github.com/StevenChege/flutter_developer_portfolio
 cd flutter_developer_portfolio
-flutter packages get
+flutter pub get
 flutter run -d chrome
 ```
 
@@ -64,4 +64,4 @@ You can also follow my GitHub Profile to stay updated about my latest projects:
 
 If you liked the repo then kindly support it by giving it a star ⭐!
 
-Copyright (c) 2022 STEVEN CHEGE resume dart website portfolio flutter-web
+Copyright (c) 2022 STEVEN CHEGE
