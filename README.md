@@ -30,7 +30,11 @@ Before these steps make sure to update flutter to `flutter 3.0`
 ```
 git clone https://github.com/StevenChege/flutter_developer_portfolio
 cd flutter_developer_portfolio
+<<<<<<< HEAD
 flutter packages get
+=======
+flutter pub get
+>>>>>>> f8a86fc1be20328f3e0ffa2b716c1836ffaf450f
 flutter run -d chrome
 ```
 
