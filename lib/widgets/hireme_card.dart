@@ -88,14 +88,14 @@ class HireMeCard extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: ResponsiveWidget.isSmallScreen(context) ? 50 : 55,
+            height: 55,
             child: Padding(
               padding: EdgeInsets.only(top: 0),
               child: NiceButton(
                 width: ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
                 imageSrc: iconHandPic,
                 text: 'Hire Me!',
-                press: () {},
+                press: () => launchEmailUrl(),
               ),
             ),
           ),

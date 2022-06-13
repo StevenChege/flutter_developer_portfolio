@@ -24,4 +24,3 @@ void main() async {
     ),
   );
 }
-// dark mode button, whatsapp link, hiremeButton 

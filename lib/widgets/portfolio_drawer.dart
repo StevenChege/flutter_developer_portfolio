@@ -117,7 +117,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                         Text(
                           'Steve Chege',
                           style: theme.textTheme.headline6!.copyWith(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w700,
                             fontSize: 18,
                             letterSpacing: 0,
                           ),
