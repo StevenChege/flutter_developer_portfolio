@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
+import '../constants/text_logs.dart';
 import '../controllers/text_field_controller.dart';
 
 class ContactForm extends GetView<TextFieldController> {
@@ -74,7 +75,7 @@ class ContactForm extends GetView<TextFieldController> {
               },
               decoration: InputDecoration(
                 labelText: 'Description',
-                hintText: 'Write some description',
+                hintText: 'Write some message',
               ),
             ),
           ),
@@ -88,6 +89,7 @@ class ContactForm extends GetView<TextFieldController> {
                 press: () {
                   controller.submitFormValues();
                   FocusScope.of(context).unfocus();
+                  // TODO: upload form vals to firestore
                 },
               ),
             ),

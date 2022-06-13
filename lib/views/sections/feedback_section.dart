@@ -11,7 +11,7 @@ class FeedBackSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),
@@ -37,11 +37,15 @@ class FeedBackSection extends StatelessWidget {
                   physics: BouncingScrollPhysics(
                     parent: AlwaysScrollableScrollPhysics(),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: List.generate(
-                      feedBacks.length,
-                      (index) => FeedBackCard(index: index),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding * 1.5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(
+                        feedBacks.length,
+                        (index) => FeedBackCard(index: index),
+                      ),
                     ),
                   ),
                 ),

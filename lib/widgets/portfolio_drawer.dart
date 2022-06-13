@@ -3,15 +3,15 @@ import 'dart:math';
 import 'package:dev_portfolio/widgets/drawer_button.dart';
 import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:dev_portfolio/widgets/small_social_card.dart';
-import 'package:dev_portfolio/widgets/toggle_theme_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
-import '../constants/text_styles.dart';
+import '../constants/text_logs.dart';
 import '../controllers/scrolling_controller.dart';
+import '../controllers/theme_controller.dart';
 
 class PortfolioDrawer extends StatefulWidget {
   const PortfolioDrawer({
@@ -28,6 +28,7 @@ class PortfolioDrawer extends StatefulWidget {
 class _PortfolioDrawerState extends State<PortfolioDrawer> {
   double value = 0;
   static var scrollcontroller = Get.find<ScrollingController>();
+  static var themeController = Get.find<ThemeController>();
 
   List<String> menuItems = [
     'Home',
@@ -40,7 +41,8 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return Scaffold(
       body: Stack(
@@ -49,7 +51,9 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
             width: _.width * .9,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [kBlue, kPink],
+                colors: theme.brightness == Brightness.light
+                    ? [primaryColor, kPink]
+                    : [bgColorDarkTheme, textColorLightTheme],
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
               ),
@@ -78,17 +82,32 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                               shape: BoxShape.circle,
                               color: kPinkDirt.withOpacity(.2),
                               border: Border.all(
-                                color: kBlue,
+                                color: primaryColor,
                                 width: 4,
                               ),
-                              boxShadow: [kDefaultCardShadow],
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 10),
+                                  blurRadius: 50,
+                                  color: theme.brightness == Brightness.light
+                                      ? kPitchDark.withOpacity(.1)
+                                      : whitebackgroundColor.withOpacity(.1),
+                                ),
+                              ],
                               image: DecorationImage(
                                   image: AssetImage(personaPic)),
                             ),
                           ),
                         ),
                         SizedBox(height: kDefaultPadding * .5),
-                        Text('Steve Chege', style: feedbackCardNameTextStyle),
+                        Text(
+                          'Steve Chege',
+                          style: theme.textTheme.headline6!.copyWith(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                            letterSpacing: 0,
+                          ),
+                        ),
                         SizedBox(height: kDefaultPadding),
                       ],
                     ),
@@ -114,19 +133,24 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                         iconSrc: iconPicTwitter,
                         color: Color(0xFFE4FFC7),
                         size: 25,
-                        press: () {}, //TODO: socials link twitter
+                        press: () => launchURLs(twitterLink),
                       ),
                       SmallSocialCard(
                         iconSrc: iconPicGithub,
                         color: Color(0xFFE8F0F9),
-                        size: 20,
-                        press: () {}, //TODO: socials link github
+                        size: 25,
+                        press: () => launchURLs(githubLink),
                       ),
-                      SizedBox(width: kDefaultPadding),
-                      Expanded(
-                        child: SizedBox(
-                            height: kDefaultPadding * 1.4,
-                            child: ThemeToggleButton()),
+                      SizedBox(width: kDefaultPadding * .7),
+                      SmallSocialCard(
+                        iconSrc: theme.brightness == Brightness.light
+                            ? darkModeImage
+                            : lightModeImage,
+                        color: theme.brightness == Brightness.light
+                            ? bgColorDarkTheme
+                            : kPink,
+                        size: 25,
+                        press: () => themeController.toggleTheme(),
                       ),
                     ],
                   ),

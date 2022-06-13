@@ -60,7 +60,7 @@ class ExperienceCountCard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 100,
-                    color: kWhite,
+                    color: whitebackgroundColor,
                   ),
                 ),
               ],

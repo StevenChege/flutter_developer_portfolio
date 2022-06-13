@@ -18,43 +18,29 @@ class NiceButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
 
     return Container(
       constraints: BoxConstraints(maxWidth: width),
       child: TextButton(
         onPressed: press,
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) =>
-                (states.contains(MaterialState.hovered))
-                    ? Color(0xFFD9FFFC)
-                    : Color(0xFFE8F0F9),
-          ),
-          shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
-            (Set<MaterialState> states) => RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
-          ),
-          padding: MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
-            (Set<MaterialState> states) => EdgeInsets.symmetric(
-              horizontal: kDefaultPadding * 2.5,
-              vertical: kDefaultPadding,
-            ),
-          ),
-        ),
         clipBehavior: Clip.antiAlias,
-        child: Row(
-          children: [
-            Image.asset(
-              imageSrc,
-              height: ResponsiveWidget.isSmallScreen(context) ? 33 : 35,
-            ),
-            SizedBox(
-              width: kDefaultPadding * .5,
-            ),
-            Text(text, style: buttonTextStyle),
-          ],
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                imageSrc,
+                height: ResponsiveWidget.isSmallScreen(context) ? 27 : 35,
+              ),
+              SizedBox(
+                width: ResponsiveWidget.isSmallScreen(context)
+                    ? kDefaultPadding * .3
+                    : kDefaultPadding * .5,
+              ),
+              Text(text, style: buttonTextStyle),
+            ],
+          ),
         ),
       ),
     );

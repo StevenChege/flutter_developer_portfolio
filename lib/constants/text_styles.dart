@@ -1,39 +1,13 @@
 import 'package:dev_portfolio/constants/colors.dart';
-import 'package:dev_portfolio/constants/constants.dart';
 
 import 'package:flutter/material.dart';
-
-final TextStyle aboutMyStoryTextStyle = TextStyle(
-  fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w800,
-  fontSize: 72,
-  letterSpacing: -.7,
-  color: kPitchDark,
-  shadows: [kDefaultCardShadow],
-);
-
-final TextStyle aboutSectiontextTextStyle = TextStyle(
-  fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w400,
-  fontSize: 16,
-  letterSpacing: .2,
-  color: kTextGrayColor,
-);
 
 final TextStyle buttonTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w300,
   fontSize: 11,
   letterSpacing: 1,
-  color: kTextGrayColor,
-);
-
-final TextStyle menubarButtonTextStyle = TextStyle(
-  fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w300,
-  fontSize: 10,
-  letterSpacing: 1,
-  color: kTextGrayColor,
+  color: kTextColor,
 );
 
 final TextStyle feedbackCardTextStyle = TextStyle(
@@ -41,7 +15,7 @@ final TextStyle feedbackCardTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 22,
   letterSpacing: 0,
-  color: kTextGrayColor,
+  color: kTextColor,
 );
 
 final TextStyle feedbackCardNameTextStyle = TextStyle(
@@ -57,15 +31,7 @@ final TextStyle servicecardTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 16,
   letterSpacing: .2,
-  color: kTextGrayColor,
-);
-
-final TextStyle drawertextTextStyle = TextStyle(
-  fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w300,
-  fontSize: 16,
-  letterSpacing: .2,
-  color: kDarker,
+  color: kTextColor,
 );
 
 final TextStyle recentworkcardText1TextStyle = TextStyle(
@@ -73,7 +39,7 @@ final TextStyle recentworkcardText1TextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 14,
   letterSpacing: 2,
-  color: kTextGrayColor,
+  color: kTextColor,
 );
 
 final TextStyle recentworkcardText3TextStyle = TextStyle(
@@ -81,7 +47,7 @@ final TextStyle recentworkcardText3TextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 14,
   letterSpacing: .2,
-  color: kTextGrayColor,
+  color: kTextColor,
   decoration: TextDecoration.underline,
 );
 
@@ -90,5 +56,5 @@ final TextStyle bottomsectTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 13,
   letterSpacing: .4,
-  color: kTextGrayColor,
+  color: kTextColor,
 );

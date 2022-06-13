@@ -22,15 +22,16 @@ class RecentWorkCard extends StatefulWidget {
 
 class _RecentWorkCardState extends State<RecentWorkCard> {
   bool isHover = false;
-  double cardWidth = 550.0;
-  double cardHight = 300.0;
+  double cardWidth = 500.0;
+  double cardHight = 350.0;
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
 
     return InkWell(
-      onTap: widget.press,
+      onTap: widget
+          .press, //TODO: recent work details navigation, with options dialogue
       onHover: (v) {
         setState(() {
           isHover = v;
@@ -42,7 +43,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
         width: cardWidth,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
-          color: kWhite,
+          color: whitebackgroundColor,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [if (isHover) kDefaultCardShadow],
         ),
@@ -67,8 +68,12 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(recentWorks[widget.index].category.toUpperCase(),
-                        style: recentworkcardText1TextStyle),
+                    SizedBox(height: kDefaultPadding),
+                    Expanded(
+                      child: Text(
+                          recentWorks[widget.index].category.toUpperCase(),
+                          style: recentworkcardText1TextStyle),
+                    ),
                     SizedBox(height: kDefaultPadding * .5),
                     Text(
                       recentWorks[widget.index].title,
@@ -78,13 +83,15 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                         fontSize:
                             ResponsiveWidget.isSmallScreen(context) ? 25 : 33,
                         letterSpacing: -.3,
-                        color: kTextGrayColor,
+                        color: kTextColor,
                       ),
                     ),
                     SizedBox(height: kDefaultPadding),
-                    Text('View Details',
-                        style:
-                            recentworkcardText3TextStyle), //TODO: recent work details navigation
+                    Expanded(
+                      child: Text('View Details',
+                          style: recentworkcardText3TextStyle),
+                    ),
+                    SizedBox(height: kDefaultPadding * .5),
                   ],
                 ),
               ),

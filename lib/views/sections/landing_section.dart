@@ -6,13 +6,14 @@ import '../../constants/constants.dart';
 import '../../widgets/menu_bar.dart';
 import '../../widgets/person_pic.dart';
 import '../../widgets/responsive_widget.dart';
+import '../../widgets/toggle_theme_button.dart';
 
 class LandingSect extends StatelessWidget {
   const LandingSect({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
 
     return Container(
       alignment: Alignment.center,
@@ -50,6 +51,16 @@ class LandingSect extends StatelessWidget {
                 ? SizedBox()
                 : MenuBar(),
           ),
+          ResponsiveWidget.isSmallScreen(context)
+              ? SizedBox()
+              : Positioned(
+                  right: 0,
+                  top: 0,
+                  child: SizedBox(
+                    height: 50,
+                    child: ThemeToggleButton(),
+                  ),
+                )
         ],
       ),
     );

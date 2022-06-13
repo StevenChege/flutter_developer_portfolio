@@ -44,7 +44,7 @@ class _MouseMagnetState extends State<MouseMagnet> {
 
   @override
   Widget build(BuildContext context) {
-    final _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
 
     return kIsWeb
         ? Stack(

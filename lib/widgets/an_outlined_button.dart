@@ -19,34 +19,25 @@ class AnOutlinedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
 
     return Container(
       constraints: BoxConstraints(maxWidth: width),
       child: OutlinedButton(
         onPressed: press,
-        style: OutlinedButton.styleFrom(
-          padding: EdgeInsets.symmetric(
-            horizontal: kDefaultPadding * 2.5,
-            vertical: kDefaultPadding,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
-            side: BorderSide(
-              color: Color(0xFFEDEDED),
-            ),
-          ),
-        ),
         clipBehavior: Clip.antiAlias,
-        child: Row(
-          children: [
-            Image.asset(
-              imageSrc,
-              height: ResponsiveWidget.isSmallScreen(context) ? 33 : 38,
-            ),
-            SizedBox(width: kDefaultPadding * .5),
-            Text(text, style: buttonTextStyle),
-          ],
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                imageSrc,
+                height: ResponsiveWidget.isSmallScreen(context) ? 33 : 38,
+              ),
+              SizedBox(width: kDefaultPadding * .5),
+              Text(text, style: buttonTextStyle),
+            ],
+          ),
         ),
       ),
     );

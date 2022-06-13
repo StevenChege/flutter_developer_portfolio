@@ -7,10 +7,7 @@ import '../constants/colors.dart';
 import '../constants/text_styles.dart';
 
 class ServiceCard extends StatefulWidget {
-  const ServiceCard({
-    Key? key,
-    required this.index,
-  }) : super(key: key);
+  const ServiceCard({Key? key, required this.index}) : super(key: key);
 
   final int index;
 
@@ -23,6 +20,8 @@ class _ServiceCardState extends State<ServiceCard> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal:
@@ -55,7 +54,9 @@ class _ServiceCardState extends State<ServiceCard> {
                 height: 120,
                 padding: EdgeInsets.all(kDefaultPadding * 1.5),
                 decoration: BoxDecoration(
-                  color: kWhite,
+                  color: theme.brightness == Brightness.light
+                      ? whitebackgroundColor
+                      : Color.fromARGB(255, 188, 198, 219),
                   shape: BoxShape.circle,
                   boxShadow: [
                     if (!isHover)
@@ -72,7 +73,10 @@ class _ServiceCardState extends State<ServiceCard> {
                 ),
               ),
               SizedBox(height: kDefaultPadding),
-              Text(services[widget.index].title, style: servicecardTextStyle),
+              Text(
+                services[widget.index].title,
+                style: servicecardTextStyle,
+              ),
             ],
           ),
         ),

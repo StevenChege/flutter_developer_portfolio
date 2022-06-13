@@ -1,7 +1,6 @@
 import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
 import '../constants/constants.dart';
-import '../constants/text_styles.dart';
 
 class AboutSectionText extends StatelessWidget {
   const AboutSectionText({Key? key, required this.text}) : super(key: key);
@@ -10,7 +9,8 @@ class AboutSectionText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
+    final ThemeData theme = Theme.of(context);
+    final double w = MediaQuery.of(context).size.width;
     double padding = w * .005;
 
     return Padding(
@@ -18,8 +18,12 @@ class AboutSectionText extends StatelessWidget {
           horizontal: !ResponsiveWidget.isLargeScreen(context)
               ? kDefaultPadding * padding
               : 0),
-      child: Text(text,
-          textAlign: TextAlign.center, style: aboutSectiontextTextStyle),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: theme.textTheme.bodyText1!
+            .copyWith(fontSize: 18, fontWeight: FontWeight.w300),
+      ),
     );
   }
 }

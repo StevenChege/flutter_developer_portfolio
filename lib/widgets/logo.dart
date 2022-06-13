@@ -12,7 +12,7 @@ class LoGo extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Agustina',
         fontWeight: FontWeight.w500,
-        color: kWhite,
+        color: whitebackgroundColor,
         fontSize: 25,
         letterSpacing: 3,
         shadows: [

@@ -10,7 +10,6 @@ import 'package:dev_portfolio/views/sections/recentwork_section.dart';
 import 'package:dev_portfolio/views/sections/service_section.dart';
 import 'package:dev_portfolio/widgets/landing_carousel.dart';
 
-import '../constants/colors.dart';
 import '../controllers/scrolling_controller.dart';
 import '../widgets/bottom_section.dart';
 import '../widgets/mouse_magnet.dart';
@@ -21,14 +20,15 @@ class HomeView extends GetView<ScrollingController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return SizedBox(
       height: size.height,
       width: size.width,
       child: PortfolioDrawer(
         child: Scaffold(
-          backgroundColor: kWhite,
+          backgroundColor: theme.scaffoldBackgroundColor,
           body: MouseMagnet(
             body: CustomScrollView(
               controller: controller.scrollingController,
@@ -43,7 +43,7 @@ class HomeView extends GetView<ScrollingController> {
                           children: [
                             LandingCarousel(),
                             Container(
-                              color: kWhite,
+                              color: theme.scaffoldBackgroundColor,
                               width: double.infinity,
                               height: 50,
                             ),

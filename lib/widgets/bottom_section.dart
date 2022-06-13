@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
+import '../constants/text_logs.dart';
 import '../constants/text_styles.dart';
 import '../controllers/scrolling_controller.dart';
 
@@ -16,8 +17,8 @@ class BottomSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
-    String love = '\u{1F499}'; // U+1F499
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return Container(
       height: 250,
@@ -32,14 +33,14 @@ class BottomSection extends StatelessWidget {
               shadow: kDefaultShadow,
               clipper: BigClipper(),
               child: Container(
-                color: kBlue,
+                color: primaryColor,
               ),
             ),
             ClipShadowPath(
               shadow: kDefaultShadow,
               clipper: SmallClipper(),
               child: Container(
-                decoration: BoxDecoration(color: kWhite),
+                decoration: BoxDecoration(color: theme.scaffoldBackgroundColor),
               ),
             ),
             Align(
@@ -48,10 +49,10 @@ class BottomSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Developed in $love with ", style: bottomsectTextStyle),
+                  Text("Developed in $lovemoji with ",
+                      style: bottomsectTextStyle),
                   InkWell(
-                    onTap: () => launchURLs(
-                        "https://github.com/stevenchege/flutter_dev_portfolio"),
+                    onTap: () => launchURLs(gitHubRepoLink),
                     child: Image.asset(flutter, height: 16),
                   )
                 ],

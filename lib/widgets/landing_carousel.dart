@@ -10,7 +10,7 @@ class LandingCarousel extends GetView<CarouseLController> {
 
   @override
   Widget build(BuildContext context) {
-    var _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
     final List<String> landingImageList = [
       landingImage1,
       landingImage2,

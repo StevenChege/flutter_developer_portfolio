@@ -1,6 +1,7 @@
 const String personaPic = 'assets/images/persona.png';
 
 const String signaturePic = 'assets/images/sign.png';
+const String signaturePicWhite = 'assets/images/sign_white.png';
 
 const String svg404ErrorImage = 'assets/images/404err.svg';
 
@@ -24,7 +25,7 @@ const String servicePic4 = 'assets/images/Intreaction_design.png';
 
 const String recentWorksPic1 = 'assets/images/work_2.png';
 const String recentWorksPic2 = 'assets/images/safari_retreats_image.png';
-const String recentWorksPic3 = 'assets/images/work_3.png';
+const String recentWorksPic3 = 'assets/images/qrcode_app_image.jpg';
 const String recentWorksPic4 = 'assets/images/work_4.png';
 
 const String feedBacksPic = 'assets/images/people.png';

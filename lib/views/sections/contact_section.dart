@@ -12,13 +12,17 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Stack(
       children: [
         Container(
             width: double.infinity,
             height: 1000,
             decoration: BoxDecoration(
-              color: kbackgroundColor,
+              color: theme.brightness == Brightness.light
+                  ? whitebackgroundColor
+                  : bgColorDarkTheme,
               image: DecorationImage(
                 image: AssetImage(contactsectionBackgroundImage),
                 fit: BoxFit.cover,

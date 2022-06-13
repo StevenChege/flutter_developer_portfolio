@@ -29,7 +29,7 @@ class UnknownPage extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontSize: ResponsiveWidget.isSmallScreen(context) ? 55 : 62,
                   letterSpacing: -.6,
-                  color: kWhite,
+                  color: whitebackgroundColor,
                 ),
               ),
             ],

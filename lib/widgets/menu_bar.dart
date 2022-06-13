@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import '../constants/constants.dart';
-import '../constants/text_styles.dart';
 import '../controllers/scrolling_controller.dart';
 
 class MenuBar extends StatefulWidget {
@@ -32,7 +31,8 @@ class _MenuBarState extends State<MenuBar> {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return Container(
       padding: EdgeInsets.symmetric(
@@ -40,12 +40,20 @@ class _MenuBarState extends State<MenuBar> {
               ? kDefaultPadding * 1.5
               : kDefaultPadding * 2.5),
       decoration: BoxDecoration(
-        color: kWhite,
+        color: theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10),
         ),
-        boxShadow: [kDefaultShadow],
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 10),
+            blurRadius: 50,
+            color: theme.brightness == Brightness.light
+                ? kPitchDark.withOpacity(.1)
+                : whitebackgroundColor.withOpacity(.1),
+          ),
+        ],
       ),
       constraints: BoxConstraints(maxWidth: _.width * .85),
       height: 75,
@@ -53,13 +61,19 @@ class _MenuBarState extends State<MenuBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           menuItems.length,
-          (i) => buildMenuItem(i),
+          (i) => buildMenuItem(
+              i,
+              theme.textTheme.button!.copyWith(
+                fontWeight: FontWeight.w300,
+                fontSize: 12,
+                letterSpacing: 1,
+              )),
         ),
       ),
     );
   }
 
-  Widget buildMenuItem(int i) => InkWell(
+  Widget buildMenuItem(int i, TextStyle? style) => InkWell(
         onTap: () {
           setState(() {
             selectedIndex = i;
@@ -77,10 +91,7 @@ class _MenuBarState extends State<MenuBar> {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Text(
-                menuItems[i].toUpperCase(),
-                style: menubarButtonTextStyle,
-              ),
+              Text(menuItems[i].toUpperCase(), style: style),
               AnimatedPositioned(
                 duration: Duration(microseconds: 200),
                 left: 0,

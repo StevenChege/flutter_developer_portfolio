@@ -2,6 +2,7 @@ import 'package:dev_portfolio/constants/constants.dart';
 import 'package:dev_portfolio/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants/colors.dart';
 import '../../constants/image_paths.dart';
 import '../../models/recentwork_model.dart';
 import '../../widgets/hireme_card.dart';
@@ -13,10 +14,14 @@ class RecentWorkSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0xFFF7E8FF),
+        color: theme.brightness == Brightness.light
+            ? Color(0xFFF7E8FF)
+            : bgColorDarkTheme,
         image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(recentworksectionBackgroundImage)),

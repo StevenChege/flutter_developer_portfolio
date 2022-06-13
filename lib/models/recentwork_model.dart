@@ -29,8 +29,8 @@ List<RecentWork> recentWorks = [
   ),
   RecentWork(
     id: 3,
-    title: recentWorksText1,
-    category: 'Graphic Design',
+    title: recentWorksText3,
+    category: 'QR Code Scanner',
     image: recentWorksPic3,
   ),
   RecentWork(

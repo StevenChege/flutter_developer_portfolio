@@ -14,15 +14,6 @@ class ServiceSection extends GetView<ScrollingController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.only(
-      //   right: ResponsiveWidget.isLargeScreen(context)
-      //       ? kDefaultPadding * 5
-      //       : kDefaultPadding * 2,
-      //   left: ResponsiveWidget.isLargeScreen(context)
-      //       ? kDefaultPadding * 5
-      //       : kDefaultPadding * 2,
-      //   bottom: kDefaultPadding * 5,
-      // ),
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
       constraints: BoxConstraints(maxWidth: 1000),
       child: Column(

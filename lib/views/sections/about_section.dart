@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/image_paths.dart';
 import '../../constants/text_logs.dart';
-import '../../constants/text_styles.dart';
 import '../../controllers/scrolling_controller.dart';
 import '../../widgets/aboutsection_text.dart';
 import '../../widgets/an_outlined_button.dart';
@@ -10,7 +9,6 @@ import '../../widgets/experience_count_card.dart';
 import '../../widgets/nice_button.dart';
 import '../../constants/constants.dart';
 import '../../widgets/responsive_widget.dart';
-import '../../widgets/toggle_theme_button.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key}) : super(key: key);
@@ -19,7 +17,8 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return Container(
       clipBehavior: Clip.none,
@@ -40,14 +39,18 @@ class AboutSection extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Text('About \nmy story', style: aboutMyStoryTextStyle),
+                        Text(' About \nmy story',
+                            style: theme.textTheme.headline2!
+                                .copyWith(fontWeight: FontWeight.w900)),
                         SizedBox(height: 25),
-                        Image.asset(signaturePic, width: 200),
+                        Image.asset(
+                            theme.brightness == Brightness.light
+                                ? signaturePic
+                                : signaturePicWhite,
+                            width: 200),
                       ],
                     ),
-                    Expanded(
-                        child: AboutSectionText(
-                            text: aboutMeTexta)), //TODO: about text
+                    Expanded(child: AboutSectionText(text: aboutMeTexta)),
                     ExperienceCountCard(expNum: '03'),
                     Expanded(child: AboutSectionText(text: aboutMeTextb)),
                   ],
@@ -59,8 +62,9 @@ class AboutSection extends StatelessWidget {
                     children: [
                       Column(
                         children: [
-                          Text('About \nmy story',
-                              style: aboutMyStoryTextStyle),
+                          Text('  About \nmy story',
+                              style: theme.textTheme.headline2!
+                                  .copyWith(fontWeight: FontWeight.w900)),
                           SizedBox(height: 25),
                           Image.asset(signaturePic, width: 200),
                         ],
@@ -86,43 +90,33 @@ class AboutSection extends StatelessWidget {
                       width: 200,
                       text: 'Hire Me',
                       imageSrc: iconHandPic,
-                      press: () {}, //TODO: hireme button
+                      press: () => launchEmailUrl(),
                     ),
-                    SizedBox(
-                      width: kDefaultPadding * 1 * 5,
-                    ),
+                    SizedBox(width: kDefaultPadding * 1 * 5),
                     NiceButton(
                       width: 200,
                       text: 'Download \n   my CV',
                       imageSrc: iconDownloadPic,
                       press: () {}, //TODO: CV url
                     ),
-                    SizedBox(
-                      width: kDefaultPadding * 1 * 5,
-                    ),
-                    SizedBox(
-                      height: 80,
-                      width: 80,
-                      child: ThemeToggleButton(),
-                    ),
+                    SizedBox(width: kDefaultPadding * 1 * 5),
                   ],
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AnOutlinedButton(
-                        width: 200,
-                        text: 'Hire Me',
-                        imageSrc: iconHandPic,
-                        press: () => Obx(scrollcontroller.scrollTo(context, 9))
-                        // Get.to(AnotherView()),
-                        ),
-                    SizedBox(width: kDefaultPadding * .5),
+                      width: 175,
+                      text: 'Hire Me',
+                      imageSrc: iconHandPic,
+                      press: () => launchEmailUrl(),
+                    ),
+                    SizedBox(width: kDefaultPadding * .4),
                     NiceButton(
-                      width: 200,
+                      width: 175,
                       text: 'Download \n   my CV',
                       imageSrc: iconDownloadPic,
-                      press: () => Obx(scrollcontroller.goToBottom()),
+                      press: () {}, //TODO: CV url
                     ),
                   ],
                 ),

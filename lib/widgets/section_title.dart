@@ -17,7 +17,8 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return Container(
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
@@ -41,7 +42,9 @@ class SectionTitle extends StatelessWidget {
               height: 100,
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: theme.brightness == Brightness.light
+                    ? kPitchDark
+                    : bodyTextColorDarkTheme,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: DecoratedBox(
@@ -54,23 +57,30 @@ class SectionTitle extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(subTitle,
-                    style: TextStyle(
-                      fontFamily: 'Helvetica Now Display',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      letterSpacing: 1,
-                      color: kTextGrayColor,
-                    )),
-                Text(title,
-                    style: TextStyle(
-                      fontFamily: 'Helvetica Now Display',
-                      fontWeight: FontWeight.w800,
-                      fontSize:
-                          ResponsiveWidget.isLargeScreen(context) ? 50 : 35,
-                      letterSpacing: -.7,
-                      color: kPitchDark,
-                    )),
+                Text(
+                  subTitle,
+                  style: TextStyle(
+                    fontFamily: 'Helvetica Now Display',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    letterSpacing: 1,
+                    color: theme.brightness == Brightness.light
+                        ? kTextColor
+                        : kTextColor,
+                  ),
+                ),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontFamily: 'Helvetica Now Display',
+                    fontWeight: FontWeight.w800,
+                    fontSize: ResponsiveWidget.isLargeScreen(context) ? 50 : 35,
+                    letterSpacing: -.7,
+                    color: theme.brightness == Brightness.light
+                        ? kPitchDark
+                        : bodyTextColorDarkTheme,
+                  ),
+                ),
               ],
             ),
           ],

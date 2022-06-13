@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import '../constants/constants.dart';
-import '../constants/text_styles.dart';
 
 class DrawerButton extends StatefulWidget {
   DrawerButton({
@@ -23,7 +22,11 @@ class _DrawerButtonState extends State<DrawerButton> {
 
   @override
   Widget build(BuildContext context) {
-    Size _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
+    final Color hoverColor = theme.brightness == Brightness.light
+        ? kBottomBarColor.withOpacity(.7)
+        : textColorDarkTheme.withOpacity(.7);
 
     return Padding(
       padding: const EdgeInsets.only(right: kDefaultPadding * .5),
@@ -35,7 +38,7 @@ class _DrawerButtonState extends State<DrawerButton> {
           });
         },
         radius: 50,
-        hoverColor: kBlue,
+        hoverColor: primaryColor,
         splashColor: kPink,
         child: AnimatedContainer(
           duration: hoverAnimationDuration,
@@ -44,12 +47,19 @@ class _DrawerButtonState extends State<DrawerButton> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(3),
             border: Border.all(
-              color: isHover ? kBottomBarColor.withOpacity(.7) : trans,
+              color: isHover ? hoverColor : trans,
               width: 1.2,
             ),
           ),
           child: Center(
-            child: Text(widget.text, style: drawertextTextStyle),
+            child: Text(
+              widget.text,
+              style: theme.textTheme.button!.copyWith(
+                fontWeight: FontWeight.w300,
+                fontSize: 16,
+                letterSpacing: .2,
+              ),
+            ),
           ),
         ),
       ),

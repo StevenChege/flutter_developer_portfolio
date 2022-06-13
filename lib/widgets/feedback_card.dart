@@ -7,10 +7,7 @@ import '../constants/colors.dart';
 import '../constants/text_styles.dart';
 
 class FeedBackCard extends StatefulWidget {
-  const FeedBackCard({
-    Key? key,
-    required this.index,
-  }) : super(key: key);
+  const FeedBackCard({Key? key, required this.index}) : super(key: key);
 
   final int index;
 
@@ -57,7 +54,7 @@ class _FeedBackCardState extends State<FeedBackCard> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: kWhite,
+                      color: whitebackgroundColor,
                       width: 10,
                     ),
                     boxShadow: [if (!isHover) kDefaultCardShadow],
@@ -76,6 +73,7 @@ class _FeedBackCardState extends State<FeedBackCard> {
                 feedBacks[widget.index].name,
                 style: feedbackCardNameTextStyle,
               ),
+              SizedBox(height: kDefaultPadding * 1.5),
             ],
           ),
         ),

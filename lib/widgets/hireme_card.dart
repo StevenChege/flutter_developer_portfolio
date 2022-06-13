@@ -13,7 +13,8 @@ class HireMeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _ = MediaQuery.of(context).size;
+    final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return Container(
       padding: EdgeInsets.all(ResponsiveWidget.isSmallScreen(context)
@@ -25,9 +26,17 @@ class HireMeCard extends StatelessWidget {
               ? _.width * .9
               : _.width * .8),
       decoration: BoxDecoration(
-        color: kWhite,
+        color: theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [kDefaultShadow],
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 10),
+            blurRadius: 50,
+            color: theme.brightness == Brightness.light
+                ? kPitchDark.withOpacity(.1)
+                : whitebackgroundColor.withOpacity(.1),
+          ),
+        ],
       ),
       child: Row(
         children: [
@@ -58,21 +67,21 @@ class HireMeCard extends StatelessWidget {
                       : 'Are you hiring?',
                   style: TextStyle(
                     fontFamily: 'Helvetica Now Display',
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     fontSize: ResponsiveWidget.isSmallScreen(context) ? 35 : 45,
                     letterSpacing: -.7,
-                    color: kPitchDark,
+                    color: theme.brightness == Brightness.light
+                        ? kPitchDark
+                        : bodyTextColorDarkTheme,
                   ),
                 ),
                 SizedBox(height: kDefaultPadding * .5),
                 Text(
                   'Add me to your team.',
-                  style: TextStyle(
-                    fontFamily: 'Helvetica Now Display',
+                  style: theme.textTheme.subtitle1!.copyWith(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
                     letterSpacing: 1.5,
-                    color: kTextGrayColor,
                   ),
                 ),
               ],

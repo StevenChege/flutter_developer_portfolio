@@ -52,8 +52,8 @@ class _ResponsiveCardState extends State<ResponsiveCard> {
 
   buildImage() {
     return AnimatedPositioned(
-      duration: carouselAnimDuration, //? Duration(milliseconds: 600);
-      curve: cardAnimationCurve, //?  Curves.easeOutCubic;
+      duration: carouselAnimDuration,
+      curve: cardAnimationCurve,
       left: isHover ? -100 + mousePosition.dx : -100,
       top: isHover ? -40 + mousePosition.dy : 0,
       bottom: isHover ? -40 + mousePosition.dy : 0,
@@ -64,7 +64,7 @@ class _ResponsiveCardState extends State<ResponsiveCard> {
         clipBehavior: Clip.antiAlias,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: kWhite,
+          color: whitebackgroundColor,
           borderRadius: const BorderRadius.all(Radius.circular(0)),
           boxShadow: [
             BoxShadow(
@@ -84,14 +84,14 @@ class _ResponsiveCardState extends State<ResponsiveCard> {
 
   buildGradient() {
     return AnimatedContainer(
-      duration: carouselAnimDuration, //? Duration(milliseconds: 600);
-      curve: cardAnimationCurve, //?  Curves.easeOutCubic;
+      duration: carouselAnimDuration,
+      curve: cardAnimationCurve,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
             kDarker.withOpacity(isHover ? .5 : 0),
-            trans, //?
+            trans,
           ],
           begin: Alignment.bottomCenter,
           end: Alignment.topRight,
@@ -107,12 +107,12 @@ class _ResponsiveCardState extends State<ResponsiveCard> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AnimatedDefaultTextStyle(
-            duration: carouselAnimDuration, //? Duration(milliseconds: 600);
+            duration: carouselAnimDuration,
             child: Text(widget.name!),
             style: GoogleFonts.crimsonPro(
               fontSize: 23,
               fontWeight: FontWeight.w600,
-              color: kWhite.withOpacity(isHover ? 1 : .6),
+              color: whitebackgroundColor.withOpacity(isHover ? 1 : .6),
               shadows: const <Shadow>[
                 Shadow(
                   offset: Offset(1.0, 1.0),
@@ -131,7 +131,7 @@ class _ResponsiveCardState extends State<ResponsiveCard> {
             style: GoogleFonts.openSans(
               fontSize: 16,
               fontWeight: FontWeight.w300,
-              color: kWhite.withOpacity(isHover ? 1 : .6),
+              color: whitebackgroundColor.withOpacity(isHover ? 1 : .6),
               shadows: const <Shadow>[
                 Shadow(
                   offset: Offset(1.0, 1.0),
