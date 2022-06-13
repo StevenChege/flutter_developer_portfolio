@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 
 import 'package:get_storage/get_storage.dart';
 
-import '../constants/constants.dart';
-
 class ThemeController extends GetxController {
   static final themeCtrl = Get.find<ThemeController>();
 
@@ -31,12 +29,12 @@ class ThemeController extends GetxController {
       changeThemeMode(ThemeMode.dark);
       saveTheme(true);
     }
-    print('__themed');
-    Get.snackbar(
-      'Theme',
-      Get.isDarkMode ? 'Changed to Light-Mode' : 'Changed to Dark-Mode',
-      maxWidth: 400,
-      margin: EdgeInsets.only(top: kDefaultPadding),
-    );
+    // print('themed changed');
+    // Get.snackbar(
+    //   'Theme',
+    //   Get.isDarkMode ? 'Changed to Light-Mode' : 'Changed to Dark-Mode',
+    //   maxWidth: 400,
+    //   margin: EdgeInsets.only(top: kDefaultPadding),
+    // );
   }
 }

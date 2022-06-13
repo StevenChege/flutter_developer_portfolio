@@ -88,7 +88,7 @@ class HireMeCard extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: ResponsiveWidget.isSmallScreen(context) ? 45 : 55,
+            height: ResponsiveWidget.isSmallScreen(context) ? 50 : 55,
             child: Padding(
               padding: EdgeInsets.only(top: 0),
               child: NiceButton(

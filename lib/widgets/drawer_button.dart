@@ -29,7 +29,10 @@ class _DrawerButtonState extends State<DrawerButton> {
         : textColorDarkTheme.withOpacity(.7);
 
     return Padding(
-      padding: const EdgeInsets.only(right: kDefaultPadding * .5),
+      padding: const EdgeInsets.only(
+        right: kDefaultPadding * .5,
+        left: kDefaultPadding * .4,
+      ),
       child: InkWell(
         onTap: widget.pressed,
         onHover: (v) {

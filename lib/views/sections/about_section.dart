@@ -73,7 +73,7 @@ class AboutSection extends StatelessWidget {
                       Expanded(
                         child: AboutSectionText(text: aboutMeTexta),
                       ),
-                      ExperienceCountCard(expNum: '08'),
+                      ExperienceCountCard(expNum: '03'),
                       SizedBox(height: kDefaultPadding * 1.8),
                       Expanded(
                         child: AboutSectionText(text: aboutMeTextb),

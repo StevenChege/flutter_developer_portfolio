@@ -3,7 +3,8 @@ const String emailRegExp =
 
 const String lovemoji = '\u{1F499}'; // U+1F499
 
-const String whatsAppLink = "https://api.whatsapp.com/send?phone=+254722755322";
+const String whatsAppLink =
+    "https://wa.me/254722755322?text=Concerning%20a%20gig%20for%20me%20?";
 
 const String twitterLink = 'https://twitter.com/hynes_steve';
 

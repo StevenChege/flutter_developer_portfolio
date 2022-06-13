@@ -67,10 +67,24 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 200,
+                    height: 250,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: SmallSocialCard(
+                            iconSrc: theme.brightness == Brightness.light
+                                ? darkModeImage
+                                : lightModeImage,
+                            color: theme.brightness == Brightness.light
+                                ? bgColorDarkTheme
+                                : kPink,
+                            size: 25,
+                            press: () => themeController.toggleTheme(),
+                          ),
+                        ),
+                        SizedBox(height: kDefaultPadding),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: kDefaultPadding * 1.5),
@@ -135,23 +149,14 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                         size: 25,
                         press: () => launchURLs(twitterLink),
                       ),
+                      SizedBox(width: kDefaultPadding),
                       SmallSocialCard(
                         iconSrc: iconPicGithub,
                         color: Color(0xFFE8F0F9),
                         size: 25,
                         press: () => launchURLs(githubLink),
                       ),
-                      SizedBox(width: kDefaultPadding * .7),
-                      SmallSocialCard(
-                        iconSrc: theme.brightness == Brightness.light
-                            ? darkModeImage
-                            : lightModeImage,
-                        color: theme.brightness == Brightness.light
-                            ? bgColorDarkTheme
-                            : kPink,
-                        size: 25,
-                        press: () => themeController.toggleTheme(),
-                      ),
+                      SizedBox(width: kDefaultPadding),
                     ],
                   ),
                 ],
