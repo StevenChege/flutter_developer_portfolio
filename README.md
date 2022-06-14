@@ -5,7 +5,7 @@ Made using Flutter 3.0. Available for **Android** and **Web**.
 
 UI inspired by [The Flutter Way's](https://github.com/abuanwar072/Protfolio-Website-Flutter-Web) portfolio web app. 
 
-<img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/screenshot.png">
+<img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/screenshot1.png">
 
 <div align="center">
 
