@@ -50,11 +50,3 @@ final TextStyle recentworkcardText3TextStyle = TextStyle(
   color: kTextColor,
   decoration: TextDecoration.underline,
 );
-
-final TextStyle bottomsectTextStyle = TextStyle(
-  fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w400,
-  fontSize: 13,
-  letterSpacing: .4,
-  color: kTextColor,
-);

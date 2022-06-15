@@ -72,7 +72,7 @@ final outlinedButtonThemeData = OutlinedButtonThemeData(
     backgroundColor: primaryColor,
     padding: EdgeInsets.symmetric(
       horizontal: kDefaultPadding * 1.5,
-      vertical: kDefaultPadding * .8,
+      vertical: kDefaultPadding,
     ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(50),
@@ -88,7 +88,7 @@ final kInputDecorationTheme = InputDecorationTheme(
   enabledBorder: kDefaultOutlineInputBorder,
   focusedBorder: kDefaultOutlineInputBorder,
   errorBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: kPinkDirt, width: 1.5),
+    borderSide: BorderSide(color: kPinker, width: 1.5),
   ),
   floatingLabelStyle: TextStyle(color: kDarker),
   errorStyle: TextStyle(fontSize: 1),

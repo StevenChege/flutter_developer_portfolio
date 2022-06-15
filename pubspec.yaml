@@ -9,9 +9,11 @@ dependencies:
   animated_text_kit: ^4.2.2
   auto_animated: ^3.0.1
   carousel_slider: ^4.0.0-nullsafety.0
+  cloud_firestore: ^3.1.17
   cupertino_icons: ^1.0.2
   draggable_scrollbar: ^0.1.0
   fancy_shimmer_image: ^2.0.0+1
+  firebase_core: ^1.17.1
   flex_color_scheme: ^5.0.1
   flutter:
     sdk: flutter
@@ -56,4 +58,4 @@ flutter_icons:
 flutter_native_splash:
   color: "#ECFFFD"
   image: assets/icons/flutter_dev_icon.png
-  android_12:
+  android_12: null

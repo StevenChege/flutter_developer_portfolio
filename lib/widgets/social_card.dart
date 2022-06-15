@@ -1,6 +1,7 @@
 import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/text_styles.dart';
 
@@ -26,6 +27,8 @@ class _SocialCardState extends State<SocialCard> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return InkWell(
       onTap: widget.press,
       onHover: (v) {
@@ -37,22 +40,33 @@ class _SocialCardState extends State<SocialCard> {
         child: AnimatedContainer(
           duration: hoverAnimationDuration,
           padding: EdgeInsets.symmetric(
-            vertical: kDefaultPadding * .5,
+            vertical: ResponsiveWidget.isSmallScreen(context)
+                ? kDefaultPadding * .2
+                : kDefaultPadding * .5,
             horizontal: ResponsiveWidget.isSmallScreen(context)
-                ? kDefaultPadding * .9
+                ? kDefaultPadding * .4
                 : kDefaultPadding * 1.5,
           ),
           decoration: BoxDecoration(
             color: widget.color,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [if (isHover) kDefaultCardShadow],
+            boxShadow: [
+              if (isHover)
+                BoxShadow(
+                  offset: Offset(0, 10),
+                  blurRadius: 50,
+                  color: theme.brightness == Brightness.light
+                      ? kPitchDark.withOpacity(.1)
+                      : whitebackgroundColor.withOpacity(.1),
+                ),
+            ],
           ),
           child: Row(
             children: [
               Image.asset(
                 widget.iconSrc,
-                height: ResponsiveWidget.isSmallScreen(context) ? 60 : 80,
-                width: ResponsiveWidget.isSmallScreen(context) ? 60 : 80,
+                height: ResponsiveWidget.isSmallScreen(context) ? 40 : 80,
+                width: ResponsiveWidget.isSmallScreen(context) ? 40 : 80,
               ),
               ResponsiveWidget.isLargeScreen(context)
                   ? SizedBox(width: kDefaultPadding)

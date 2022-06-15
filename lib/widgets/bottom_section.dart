@@ -7,7 +7,6 @@ import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
 import '../constants/text_logs.dart';
-import '../constants/text_styles.dart';
 import '../controllers/scrolling_controller.dart';
 
 class BottomSection extends StatelessWidget {
@@ -23,7 +22,8 @@ class BottomSection extends StatelessWidget {
     return Container(
       height: 250,
       width: _.width,
-      color: kBottomBarColor,
+      color:
+          theme.brightness == Brightness.light ? kBottomBarColor : kPitchDark,
       padding: EdgeInsets.only(bottom: kDefaultPadding * 3),
       child: Transform.translate(
         offset: Offset(0, -5),
@@ -49,8 +49,11 @@ class BottomSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Developed in $lovemoji with ",
-                      style: bottomsectTextStyle),
+                  Text(
+                    "Developed in $lovemoji with ",
+                    style: theme.textTheme.bodySmall!
+                        .copyWith(color: whitebackgroundColor),
+                  ),
                   InkWell(
                     onTap: () => launchURLs(gitHubRepoLink),
                     child: Image.asset(flutter, height: 16),

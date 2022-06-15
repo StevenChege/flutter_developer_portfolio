@@ -1,4 +1,5 @@
 import 'package:dev_portfolio/widgets/contact_form.dart';
+import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:dev_portfolio/widgets/social_card.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class ContactBox extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     return Container(
-      height: 969,
+      height: 900,
       padding: EdgeInsets.all(kDefaultPadding * 3),
       margin: EdgeInsets.only(top: kDefaultPadding * 2),
       constraints: BoxConstraints(maxWidth: 1000),
@@ -36,6 +37,9 @@ class ContactBox extends StatelessWidget {
       ),
       child: Column(
         children: [
+          ResponsiveWidget.isSmallScreen(context)
+              ? SizedBox()
+              : SizedBox(height: kDefaultPadding * 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

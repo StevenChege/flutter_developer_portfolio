@@ -8,7 +8,7 @@ const Color kBottomBarColor = Color(0xFF221E22);
 
 const Color kPink = Color(0xFFFFE0E0);
 
-const Color kPinkDirt = Color(0xFFC799A6);
+const Color kPinker = Color(0xFFC799A6);
 
 const Color trans = Colors.transparent;
 

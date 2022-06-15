@@ -28,6 +28,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
   @override
   Widget build(BuildContext context) {
     final Size _ = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return InkWell(
       onTap: widget
@@ -45,7 +46,16 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
         decoration: BoxDecoration(
           color: whitebackgroundColor,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [if (isHover) kDefaultCardShadow],
+          boxShadow: [
+            if (isHover)
+              BoxShadow(
+                offset: Offset(0, 10),
+                blurRadius: 50,
+                color: theme.brightness == Brightness.light
+                    ? kPitchDark.withOpacity(.1)
+                    : whitebackgroundColor.withOpacity(.1),
+              ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,

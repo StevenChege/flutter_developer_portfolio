@@ -13,7 +13,7 @@ const String githubLink = 'https://github.com/StevenChege';
 const String gitHubRepoLink =
     'https://github.com/StevenChege/flutter_developer_portfolio';
 
-final String email = 'stephenchege.muiruri@gmail.com';
+final String myEmail = 'stephenchege.muiruri@gmail.com';
 
 final String emailSubject = 'Concerning a job for me?';
 

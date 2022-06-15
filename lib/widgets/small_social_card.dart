@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import '../constants/constants.dart';
 
 class SmallSocialCard extends StatefulWidget {
@@ -25,6 +26,8 @@ class _SmallSocialCardState extends State<SmallSocialCard> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * .5),
       child: InkWell(
@@ -44,7 +47,16 @@ class _SmallSocialCardState extends State<SmallSocialCard> {
             decoration: BoxDecoration(
               color: widget.color,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [if (isHover) kDefaultCardShadow],
+              boxShadow: [
+                if (isHover)
+                  BoxShadow(
+                    offset: Offset(0, 10),
+                    blurRadius: 50,
+                    color: theme.brightness == Brightness.light
+                        ? kPitchDark.withOpacity(.1)
+                        : whitebackgroundColor.withOpacity(.1),
+                  ),
+              ],
             ),
             child: Image.asset(
               widget.iconSrc,

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 import '../constants/text_styles.dart';
 
-class NiceButton extends StatelessWidget {
-  const NiceButton({
+class ATextButton extends StatelessWidget {
+  const ATextButton({
     Key? key,
     required this.imageSrc,
     required this.text,

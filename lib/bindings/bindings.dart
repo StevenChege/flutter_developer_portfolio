@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../controllers/carousel_controller.dart';
 import '../controllers/scrolling_controller.dart';
-import '../controllers/text_field_controller.dart';
+import '../controllers/form_fields_controller.dart';
 import '../controllers/theme_controller.dart';
 
 class Binding extends Bindings {
@@ -14,6 +14,6 @@ class Binding extends Bindings {
 
     Get.lazyPut<CarouseLController>(() => CarouseLController());
 
-    Get.lazyPut<TextFieldController>(() => TextFieldController());
+    Get.lazyPut<FormFieldsController>(() => FormFieldsController());
   }
 }

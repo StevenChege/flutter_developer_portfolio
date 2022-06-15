@@ -6,7 +6,7 @@ import '../../controllers/scrolling_controller.dart';
 import '../../widgets/aboutsection_text.dart';
 import '../../widgets/an_outlined_button.dart';
 import '../../widgets/experience_count_card.dart';
-import '../../widgets/nice_button.dart';
+import '../../widgets/a_text_button.dart';
 import '../../constants/constants.dart';
 import '../../widgets/responsive_widget.dart';
 
@@ -66,7 +66,11 @@ class AboutSection extends StatelessWidget {
                               style: theme.textTheme.headline2!
                                   .copyWith(fontWeight: FontWeight.w900)),
                           SizedBox(height: 25),
-                          Image.asset(signaturePic, width: 200),
+                          Image.asset(
+                              theme.brightness == Brightness.light
+                                  ? signaturePic
+                                  : signaturePicWhite,
+                              width: 200),
                         ],
                       ),
                       SizedBox(height: kDefaultPadding),
@@ -93,7 +97,7 @@ class AboutSection extends StatelessWidget {
                       press: () => launchEmailUrl(),
                     ),
                     SizedBox(width: kDefaultPadding * 1 * 5),
-                    NiceButton(
+                    ATextButton(
                       width: 200,
                       text: 'Download \n   my CV',
                       imageSrc: iconDownloadPic,
@@ -112,7 +116,7 @@ class AboutSection extends StatelessWidget {
                       press: () => launchEmailUrl(),
                     ),
                     SizedBox(width: kDefaultPadding * .4),
-                    NiceButton(
+                    ATextButton(
                       width: 175,
                       text: 'Download \n   my CV',
                       imageSrc: iconDownloadPic,

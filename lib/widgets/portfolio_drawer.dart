@@ -94,7 +94,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: kPinkDirt.withOpacity(.2),
+                              color: kPinker.withOpacity(.2),
                               border: Border.all(
                                 color: primaryColor,
                                 width: 4,

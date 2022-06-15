@@ -1,5 +1,5 @@
 import 'package:dev_portfolio/constants/constants.dart';
-import 'package:dev_portfolio/widgets/nice_button.dart';
+import 'package:dev_portfolio/widgets/a_text_button.dart';
 import 'package:dev_portfolio/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -91,7 +91,7 @@ class HireMeCard extends StatelessWidget {
             height: 55,
             child: Padding(
               padding: EdgeInsets.only(top: 0),
-              child: NiceButton(
+              child: ATextButton(
                 width: ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
                 imageSrc: iconHandPic,
                 text: 'Hire Me!',

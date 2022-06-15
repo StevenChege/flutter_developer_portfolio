@@ -38,8 +38,11 @@ class FeedBackSection extends StatelessWidget {
                     parent: AlwaysScrollableScrollPhysics(),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: kDefaultPadding * 1.5),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: ResponsiveWidget.isSmallScreen(context)
+                          ? 0
+                          : kDefaultPadding * 1.5,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(

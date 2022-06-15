@@ -46,7 +46,7 @@ void launchURLs(String _url) async {
 
 void launchEmailUrl() async {
   final String query =
-      'mailto:$email?subject=${(Uri.encodeComponent(emailSubject))}&body=${(Uri.encodeComponent(body))}';
+      'mailto:$myEmail?subject=${(Uri.encodeComponent(emailSubject))}&body=${(Uri.encodeComponent(body))}';
 
   await canLaunchUrl(Uri.parse(query))
       ? await launchUrl(Uri.parse(query))
