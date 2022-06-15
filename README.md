@@ -1,17 +1,17 @@
-<h1 align="start" style="font-size: 52px;" ><img height=30 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flutter/flutter.png"> Flutter Dev Portfolio </h1>  <!-- header -->
+<h1 align="start" style="font-size: 52px;" ><img height=30 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flutter/flutter.png"> Flutter Dev Portfolio </h1> 
 
 A Flutter Portfolio project implementing **GetX** state management and routing, dynamic **theming**, beautiful **responsive** UI and sliver **animations**.
 Made using Flutter 3.0. Available for **Android** and **Web**.
 
 UI inspired by [The Flutter Way's](https://github.com/abuanwar072/Protfolio-Website-Flutter-Web) portfolio web app. 
 
-<img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshot1.png"> <!-- big image -->
+<img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/screenshot1.png">
 
 <div align="center">
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#)[![GitHub forks](https://img.shields.io/github/forks/StevenChege/flutter_developer_portfolio?style=social)](https://github.com/StevenChege/flutter_developer_portfolio/fork)[![GitHub issues](https://img.shields.io/github/issues/StevenChege/flutter_developer_portfolio)](https://github.com/StevenChege/flutter_developer_portfolio/issues)[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&label=Contributions&colorA=red&colorB=black)](#)
 
-</div>  <!-- buttons -->
+</div>  
 
 ## 🤖 Features
 
@@ -48,7 +48,7 @@ flutter run -d chrome
 
 ## 👀 Looks
 
-<img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshot1.png"> <img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshot2.png"> <img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshota.png"> <img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshotc.png"> <img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshotz.png"> <img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/assets/images/Screenshotb.png"> 
+<img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/screenshot3.png"> <img src="https://github.com/StevenChege/flutter_developer_portfolio/blob/master/screenshot2.png">
 
 ## 🔑 License
 
